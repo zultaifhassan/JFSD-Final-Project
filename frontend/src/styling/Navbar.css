@@ -1,0 +1,153 @@
+
+
+.navbar {
+    /* height: 5.3rem; */
+    background: #fff;
+    border-bottom: 2px solid rgb(211, 210, 210);
+}
+
+.navbar-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 30px 0px 5px 0px;
+    z-index: 999;
+}
+
+.navbar-2 .logo-side a {
+    text-decoration: none;
+    color: #000;
+}
+
+.center-links {
+    display: flex;
+}
+
+.center-links ul {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.center-links ul li {
+    list-style: none;
+}
+
+.center-links ul li a {
+    color: #000;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem; 
+    text-decoration: none;
+    margin: 0;
+    cursor: pointer;
+}
+
+.center-links ul li a:hover {
+    border-bottom: 2px solid rgb(173, 173, 173);
+}
+
+
+.search-area {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+.input-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.25rem;
+    background: #F5F5F5;
+    padding: 0.4375rem 0.75rem 0.4375rem 1.25rem;
+    font-size: 18px;
+}
+
+.input-box input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.input-box input::placeholder {
+    color: #000;
+    font-family: Poppins;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.125rem; /* 150% */
+}
+
+.cart-icon {
+    font-size: 25px;
+    display: flex;
+    gap: 1.5rem;
+}
+
+
+
+
+.menu-icon {
+    display: none;
+  }
+
+
+  
+  @media (max-width: 600px) {
+
+    .navbar-2 {
+        padding: 22px 25px 22px 25px;
+    }
+    .menu-icon {
+      display: block;
+      cursor: pointer;
+      font-size: 30px;
+      margin-right: 10px;
+    }
+  
+    .center-links {
+      position: absolute;
+      right: 0;
+      top: 150px;
+      background-color: #ffff;
+      width: 0px;
+      height: calc(60vh - 60px);
+      transition: all 0.3s ease-in;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 20px;
+      z-index: 999;
+      height: 260px;
+    }
+    
+    .center-links.active {
+        width: 100%;
+    }
+  
+    .center-links ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-top: 20px;
+      gap: 2rem;
+      padding: 0;
+    }
+  
+    .center-links ul li {
+      margin-right: unset;
+      align-items: center;
+      font-style: 20px;
+
+    }
+
+  }
