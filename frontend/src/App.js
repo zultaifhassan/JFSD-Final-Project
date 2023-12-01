@@ -9,6 +9,8 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import Addtocart from "./components/Addtocart";
+import Whishlist from "./components/Whishlist";
 
 
 
@@ -23,6 +25,9 @@ function App() {
       <Route path="/contact" element={<Contact />} />
       <Route path="/login" element={<Login />} />
       <Route path="/about" element={<About />} />
+      <Route path="/addcart" element={<Addtocart />} />
+      <Route path="/whistlist" element={<Whishlist />} />
+
     </Routes>
     <Footer />
     </>

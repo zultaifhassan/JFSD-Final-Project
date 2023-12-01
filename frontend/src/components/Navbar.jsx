@@ -43,8 +43,8 @@ const Navbar = () => {
             <FontAwesomeIcon icon={faPaperPlane} />
           </div>
           <div className="cart-icon">
-          <FontAwesomeIcon icon={faHeart} />
-          <FontAwesomeIcon icon={faCartShopping} />
+          <Link to="/whistlist"><FontAwesomeIcon icon={faHeart}></FontAwesomeIcon></Link>
+          <Link to="/addcart"><FontAwesomeIcon icon={faCartShopping} /></Link>
           </div>
         </div>
       </div>

@@ -26,17 +26,13 @@ const Slider = () => {
         pagination={{
           clickable: true,
         }}
-        navigation={true}
+        navigation={false}
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
 
-        // style={{
-        //   "--swiper-pagination-color": "#FFBA08",
-        //   "--swiper-pagination-bullet-inactive-color": "#999999",
-        //   "--swiper-pagination-bullet-inactive-opacity": "1",
-        //   "--swiper-pagination-bullet-size": "16px",
-        //   "--swiper-pagination-bullet-horizontal-gap": "6px"
-        // }}
+        style={{
+          "--swiper-pagination-bullet-inactive-opacity": "0.5",
+        }}
       >
         <SwiperSlide>Slide 1</SwiperSlide>
         <SwiperSlide>Slide 2</SwiperSlide>

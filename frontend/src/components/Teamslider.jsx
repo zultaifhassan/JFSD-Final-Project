@@ -39,15 +39,6 @@ const Teamslider = () => {
       }}
       modules={[Pagination]}
       className="mySwiper"
-
-      // style={{
-      //   "--swiper-pagination-color": "#DB4444",
-      //   "--swiper-pagination-border": "2px-solid-gray",
-      //   "--swiper-pagination-bullet-inactive-color": "#999999",
-      //   "--swiper-pagination-bullet-inactive-opacity": "1",
-      //   "--swiper-pagination-bullet-size": "15px",
-      //   "--swiper-pagination-bullet-horizontal-gap": "6px"
-      // }}
     >
       <SwiperSlide>
         <div className="ceo-img">
