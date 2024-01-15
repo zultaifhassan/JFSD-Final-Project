@@ -1,10 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styling/Contact.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import axios from 'axios'
+
 
 const Contact = () => {
+
+  const [query, setQuery] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+
+  })
+
+  const {name, email, phone, message}= query;
+
+  const handleChange = (e) => {
+    setQuery({...query,[e.target.name]:e.target.value})
+  }
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    const data = await axios.post("http://localhost:1213/api/query", query)
+    setQuery(data);
+    alert('Your Query Submitted Succesfully')
+  }
+
+
   return (
+    <>
     <div className="container contact-form">
       <div className="side-bar">
         <div className="inner-div">
@@ -32,22 +58,25 @@ const Contact = () => {
           </div>
         </div>
       </div>
+        <form onSubmit={onSubmit}>
       <div className="contact-side">
         <div className="inner-contact">
             <div className="first-input">
-              <input type="text" placeholder="Your Name"/>
-              <input type="email" placeholder="Your Mail"/>
-              <input type="text" placeholder="Your Phone"/>
+              <input type="text" name="name" value={name} onChange={handleChange} placeholder="Your Name" required/>
+              <input type="email" name="email" value={email} onChange={handleChange} placeholder="Your Mail" required/>
+              <input type="text" name="phone" value={phone} onChange={handleChange} placeholder="Your Phone" required/>
             </div>
             <div className="second-text">
-              <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+              <textarea name="message" value={message} onChange={handleChange} cols="30" rows="10" placeholder="Your Message" required></textarea>
             </div>
             <div className="message-but">
               <button>Send Message</button>
             </div>
         </div>
       </div>
+        </form>
     </div>
+    </>
   );
 };
 

@@ -1,13 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faMobileScreen,
-  faComputer,
-  faCamera,
-  faHeadphones,
-  faGamepad,
-} from "@fortawesome/free-solid-svg-icons";
 import "../styling/Home.css";
 
 const Category = () => {
@@ -24,30 +16,30 @@ const Category = () => {
         <div className="category">
           <Link to="/">
             <div className="items-list">
-              <FontAwesomeIcon icon={faMobileScreen} />
-              <p>Mobile</p>
+              <img src="/Images/food1.svg" alt="" />
+              <p>Grapes</p>
             </div>
           </Link>
           
           <div className="items-list">
-            <FontAwesomeIcon icon={faComputer} />
-            <p>Computer</p>
+          <img src="/Images/food2.svg" alt="" />
+            <p>Apricoat</p>
           </div>
           <div className="items-list">
-            <FontAwesomeIcon icon={faCamera} />
-            <p>Camera</p>
+          <img src="/Images/fruits1.svg" alt="" />
+            <p>Peanut</p>
           </div>
           <div className="items-list">
-            <FontAwesomeIcon icon={faHeadphones} />
-            <p>Headphones</p>
+          <img src="/Images/fruits2.svg" alt="" />
+            <p>Apples</p>
           </div>
           <div className="items-list">
-            <FontAwesomeIcon icon={faGamepad} />
-            <p>Gaming</p>
+          <img src="/Images/fruits3.svg" alt="" />
+            <p>Orange</p>
           </div>
           <div className="items-list">
-            <FontAwesomeIcon icon={faMobileScreen} />
-            <p>Mobile</p>
+          <img src="/Images/fruits4.svg" alt="" />
+            <p>Mango</p>
           </div>
         </div>
       </div>

@@ -17,7 +17,7 @@ import { Pagination } from 'swiper/modules';
 
 const Teamslider = () => {
   return (
-    <div className='container'>
+    <div className='container team-slider'>
     <Swiper
       slidesPerView={1}
       spaceBetween={10}

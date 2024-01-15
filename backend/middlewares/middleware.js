@@ -27,12 +27,14 @@ export const authenticateUser = (req, res, next) => {
 
 export const checkRole = (role) => {
     return (req, res, next) => {
-        const roleUser = req.user && req.user.roleUser;
+        
+        const roleUser = req.user && req.user.role;
+        console.log(req.user)
 
-        if (roleUser === role) {
-            next()
-        } else {
-            res.status(403).json('You are not allowed')
-        }
+        if (roleUser !== role) {
+            res.status(403).json('Only Admin are Allowed')
+        } 
+        next(role);
+        
     }
 }

@@ -1,0 +1,94 @@
+
+.producttable {
+    margin-top: 100px;
+    width: 97%;
+    height: 90vh;
+    background: #F5F5F6;
+    padding: 1rem;
+    font-family: 'poppins';
+}
+
+.tableoverlay {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 1rem !important;
+    padding: 1.5rem 2rem;
+    border-radius: 1.08006rem;
+    background: #FFF;
+}
+.searchbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.searchbar h3 {
+    font-family: 'poppins';
+    font-weight: 600;
+}
+
+
+.searchbar button {
+    padding: 8px 0 !important;
+
+}
+.search-input {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border: 1px solid gray;
+    height: 33px;
+    padding: 0 10px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.search-input input {
+    border: none;
+    outline: none;
+    font-family: 'poppins';
+}
+
+table thead tr td {
+    width: 20%;
+    padding: 10px 20px 10px 0px;
+
+}
+
+table tbody tr td {
+    padding: 5px 20px 10px 0px;
+}
+
+.Delete-icon {
+    display: flex;
+    gap: 20px;
+    font-size: 22px;
+}
+
+.delete-i {
+    cursor: pointer;
+}
+
+.delete-i:hover{
+    color: red;
+}
+
+.edit-i {
+    cursor: pointer;
+}
+
+.edit-i:hover{
+    color: green;
+}
+
+.tableoverlay button {
+    width: 200px;
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    font-family: 'poppins';
+    cursor: pointer;
+
+}

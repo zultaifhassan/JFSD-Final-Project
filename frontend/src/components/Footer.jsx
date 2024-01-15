@@ -77,6 +77,9 @@ const Footer = () => {
             <p>
               <Link to="/">Contact</Link>
             </p>
+            <p>
+              <Link to="/admindashboard">Dashboard</Link>
+            </p>
           </div>
         </div>
         <div className="app-link">

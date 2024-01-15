@@ -1,0 +1,24 @@
+.counter {
+    display: flex;
+    gap: 10px;
+    border-radius: 0.25rem;
+    border: 1.5px solid rgba(0, 0, 0, 0.40);
+    width: 100px;
+    justify-content: space-between;
+    padding: .2rem .7rem;
+}
+
+.counter p {
+    color: #000 !important;
+    font-family: Poppins;
+    font-size: 1rem !important;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem; 
+}
+
+.counter button {
+    border: none;
+    background-color: #ffff;
+    font-size: 1.1rem;
+}

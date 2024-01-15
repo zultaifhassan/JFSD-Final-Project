@@ -1,289 +1,71 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart, faEye, faStar } from "@fortawesome/free-solid-svg-icons";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-
-import "../styling/Product.css";
-
-// import required modules
-import { Autoplay, Navigation } from "swiper/modules";
+import { faHeart, faStar } from "@fortawesome/free-solid-svg-icons";
+// import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import cartSlice from "../data/cartSlice";
+// import { fetchAllProducts } from "../data/productSlice";
+import productList from "../data/productList.json";
+// import axios from "axios";
 
 const Productslider = () => {
+
+  const { cartProductIds } = useSelector((state) => state.cart)
+  const { addToCart, removeFromCart } = cartSlice.actions
+  const dispatch = useDispatch()
+
+
   return (
     <>
-      <div className="productslider container">
-        <Swiper
-          slidesPerView={1}
-          spaceBetween={10}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
-          navigation={true}
-          breakpoints={{
-            640: {
-              slidesPerView: 1,
-            },
-            768: {
-              slidesPerView: 3,
-              spaceBetween: 20,
-            },
-            1024: {
-              slidesPerView: 5,
-              spaceBetween: 20,
-            },
-          }}
-          modules={[Autoplay, Navigation]}
-          className="mySwiper"
-        >
-          <SwiperSlide>
-            <div className="product-cart">
-              <div className="product-1">
-                <div className="sale">
-                  <p>- 30%</p>
-                </div>
-                <div className="heareye">
-                  <div className="eye-icon">
-                    <FontAwesomeIcon icon={faEye} />
+      <div className="sale-head container">
+        <div className="dot-sale">
+          <span></span>
+          <p>New Products</p>
+        </div>
+        <h2>Collection of New Products</h2>
+      </div>
+      <div className="products container">
+        {productList.products.map((item) => {
+          return (
+            <div className="product-cart1">
+              <form>
+                <div className="product-1">
+                  <div className="heareye">
+                    <div className="salel"></div>
+                    <div className="hearth-icon">
+                      <FontAwesomeIcon icon={faHeart} />
+                    </div>
                   </div>
-                  <div className="hearth-icon">
-                    <FontAwesomeIcon icon={faHeart} />
+                  <div className="productimg">
+                    <img src={item.imageUrl} alt="" />
                   </div>
                 </div>
-              </div>
-              <div className="add-cart">
-                <Link to="/addcart">Add To Cart</Link>
-              </div>
-              <div className="product-price">
-                <h5>AK-900 Wired Keyboard</h5>
-                <p>
-                  $300 <del>$430</del>
-                </p>
-                <div className="rating">
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <p>(55)</p>
+                <div className="add-cart">
+                  {!cartProductIds.includes(item.id) && (<button onClick={() => dispatch(addToCart(item.id))}>Add to cart</button>)}
+                  {cartProductIds.includes(item.id) && (<button onClick={() => dispatch(removeFromCart(item.id))}>Remove From Cart</button>)}
                 </div>
-              </div>
+                <div className="product-price">
+                  <h5 name='title'>{item.name}</h5>
+                  <p name='price' >${item.price}</p>
+                  <div className="rating">
+                    <FontAwesomeIcon icon={faStar} />
+                    <FontAwesomeIcon icon={faStar} />
+                    <FontAwesomeIcon icon={faStar} />
+                    <FontAwesomeIcon icon={faStar} />
+                    <FontAwesomeIcon icon={faStar} />
+                    <p>(55)</p>
+                  </div>
+                </div>
+              </form>
             </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="product-cart">
-              <div className="product-1">
-                <div className="sale">
-                  <p>- 30%</p>
-                </div>
-                <div className="heareye">
-                  <div className="eye-icon">
-                    <FontAwesomeIcon icon={faEye} />
-                  </div>
-                  <div className="hearth-icon">
-                    <FontAwesomeIcon icon={faHeart} />
-                  </div>
-                </div>
-              </div>
-              <div className="add-cart">
-                <Link to="/addcart">Add To Cart</Link>
-              </div>
-              <div className="product-price">
-                <h5>AK-900 Wired Keyboard</h5>
-                <p>
-                  $300 <del>$430</del>
-                </p>
-                <div className="rating">
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <p>(55)</p>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="product-cart">
-              <div className="product-1">
-                <div className="sale">
-                  <p>- 30%</p>
-                </div>
-                <div className="heareye">
-                  <div className="eye-icon">
-                    <FontAwesomeIcon icon={faEye} />
-                  </div>
-                  <div className="hearth-icon">
-                    <FontAwesomeIcon icon={faHeart} />
-                  </div>
-                </div>
-              </div>
-              <div className="add-cart">
-                <Link to="/addcart">Add To Cart</Link>
-              </div>
-              <div className="product-price">
-                <h5>AK-900 Wired Keyboard</h5>
-                <p>
-                  $300 <del>$430</del>
-                </p>
-                <div className="rating">
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <p>(55)</p>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="product-cart">
-              <div className="product-1">
-                <div className="sale">
-                  <p>- 30%</p>
-                </div>
-                <div className="heareye">
-                  <div className="eye-icon">
-                    <FontAwesomeIcon icon={faEye} />
-                  </div>
-                  <div className="hearth-icon">
-                    <FontAwesomeIcon icon={faHeart} />
-                  </div>
-                </div>
-              </div>
-              <div className="add-cart">
-                <Link to="/addcart">Add To Cart</Link>
-              </div>
-              <div className="product-price">
-                <h5>AK-900 Wired Keyboard</h5>
-                <p>
-                  $300 <del>$430</del>
-                </p>
-                <div className="rating">
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <p>(55)</p>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="product-cart">
-              <div className="product-1">
-                <div className="sale">
-                  <p>- 30%</p>
-                </div>
-                <div className="heareye">
-                  <div className="eye-icon">
-                    <FontAwesomeIcon icon={faEye} />
-                  </div>
-                  <div className="hearth-icon">
-                    <FontAwesomeIcon icon={faHeart} />
-                  </div>
-                </div>
-              </div>
-              <div className="add-cart">
-                <Link to="/addcart">Add To Cart</Link>
-              </div>
-              <div className="product-price">
-                <h5>AK-900 Wired Keyboard</h5>
-                <p>
-                  $300 <del>$430</del>
-                </p>
-                <div className="rating">
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <p>(55)</p>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="product-cart">
-              <div className="product-1">
-                <div className="sale">
-                  <p>- 30%</p>
-                </div>
-                <div className="heareye">
-                  <div className="eye-icon">
-                    <FontAwesomeIcon icon={faEye} />
-                  </div>
-                  <div className="hearth-icon">
-                    <FontAwesomeIcon icon={faHeart} />
-                  </div>
-                </div>
-              </div>
-              <div className="add-cart">
-                <Link to="/addcart">Add To Cart</Link>
-              </div>
-              <div className="product-price">
-                <h5>AK-900 Wired Keyboard</h5>
-                <p>
-                  $300 <del>$430</del>
-                </p>
-                <div className="rating">
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <p>(55)</p>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="product-cart">
-              <div className="product-1">
-                <div className="sale">
-                  <p>- 30%</p>
-                </div>
-                <div className="heareye">
-                  <div className="eye-icon">
-                    <FontAwesomeIcon icon={faEye} />
-                  </div>
-                  <div className="hearth-icon">
-                    <FontAwesomeIcon icon={faHeart} />
-                  </div>
-                </div>
-              </div>
-              <div className="add-cart">
-                <Link to="/addcart">Add To Cart</Link>
-              </div>
-              <div className="product-price">
-                <h5>AK-900 Wired Keyboard</h5>
-                <p>
-                  $300 <del>$430</del>
-                </p>
-                <div className="rating">
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <p>(55)</p>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-        </Swiper>
+          );
+        })}
       </div>
       <div className="view-button container">
-          <Link to='/'><button>View All Products </button></Link>
+        <Link to="/allproducts">
+          <button>View All Products </button>
+        </Link>
       </div>
     </>
   );

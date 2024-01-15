@@ -89,12 +89,46 @@
     gap: 1.5rem;
 }
 .cart-icon a {
-    font-size: 65px;
     color: #000;
 }
 
+.faSearch {
+    font-size: 23px;
+}
 
+.iconCart {
+    font-size: 37px;
+}
 
+.cart-number {
+    position: relative;
+
+}
+.cart-number p {
+    position: absolute;
+    left: 25px;
+    padding: 1px 5px;
+    border-radius: 100px;
+    background-color: red;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.iconCart:hover {
+    color: red;
+}
+
+.iconhearth {
+    font-size: 37px;
+}
+.iconhearth:hover {
+    color: red;
+}
+
+.faBars {
+    font-size: 40px;
+}
 
 .menu-icon {
     display: none;

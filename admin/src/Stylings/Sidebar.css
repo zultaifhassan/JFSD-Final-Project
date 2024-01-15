@@ -1,0 +1,58 @@
+
+.Sidebar {
+    width: 273px;
+    height: 100vh;
+    background-color: #F5F5F5;
+    position: sticky;
+    box-shadow: 11px 13px 32px -29px rgba(0,0,0,0.75);
+    position: fixed;
+}
+
+.logo {
+    padding: 3rem 0 0 2rem;
+}
+
+.logo h2 {
+    font-family: 'poppins';
+    font-size: 30px;
+    list-style: 20px;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+    font-weight: normal;
+
+}
+
+.menu-list {
+    padding: 2rem 1rem 0 2rem;
+    font-family: 'poppins';
+}
+
+.menu-list ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.menu-list ul a {
+    list-style: none;
+    color: #000;
+    text-decoration: none;
+    display: flex;
+    gap: 20px;
+    height: 50px;
+    align-items: center;
+    background-color: rgba(0, 0, 255, 0.062);
+    border-radius: 10px;
+    font-size: 22px;
+    padding: 0 0 0 10px;
+}
+
+.menu-list ul a:hover {
+    background-color: rgb(226, 231, 226);
+    color: black;
+}
+
+.menu-list ul a li {
+    font-size: 18px;
+}

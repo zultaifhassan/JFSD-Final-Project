@@ -1,11 +1,18 @@
-import React from 'react'
+import React from "react";
 
-const Whishlist = () => {
+
+const Whishlist = ({ cart }) => {
   return (
-    <div className="container mt-5 mb-5">
-        Whishlist
-    </div>
-  )
-}
+    <>
+      <div>
+        {cart && cart.length > 0 ? (
+          cart.map((productId) => <li key={productId}>{productId}</li>)
+        ) : (
+          <li>No items in the wishlist</li>
+        )}
+      </div>
+    </>
+  );
+};
 
-export default Whishlist
+export default Whishlist;

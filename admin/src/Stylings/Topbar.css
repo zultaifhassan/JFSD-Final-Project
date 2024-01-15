@@ -1,0 +1,56 @@
+.topbar {
+    background-color: #F5F5F5;
+    height: 100px;
+    width: 80%;
+    position: fixed;
+    box-shadow: 10px 10px 37px -27px rgba(0,0,0,0.75);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.searchicon {
+    margin: 0 4rem;
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background: #ffff;
+}
+
+.searchicon input {
+    font-family: "poppins";
+    border: none;
+    outline: none;
+    width: 250px;
+    font-size: 16px;
+}
+
+.icon-sizing {
+    font-size: 23px;
+    cursor: pointer;
+}
+
+.icon-sizing:hover {
+    color: gray;
+}
+
+
+.user-logout {
+    padding: 0 4rem;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 30px;
+}
+
+.user-logout button {
+    padding: 8px 20px;
+    font-family: 'poppins';
+    border-radius: 5px;
+    border: none;
+    background: #ffff;
+    cursor: pointer;
+}
