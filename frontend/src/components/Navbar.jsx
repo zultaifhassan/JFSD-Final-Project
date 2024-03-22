@@ -35,6 +35,13 @@ const Navbar = () => {
             <li>
               <Link to="/signup">Sign Up</Link>
             </li>
+            <li>
+            <link to="/Account">Account</link>
+            </li>
+            <li>
+            <link to="/Context">context</link>
+            </li>
+            
           </ul>
         </div>
         <div className="search-area">
